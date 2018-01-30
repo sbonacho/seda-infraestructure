@@ -9,8 +9,8 @@ services:
     ports:
       - "9092:9092"
     environment:
-      KAFKA_ADVERTISED_HOST_NAME: 192.168.0.95
-      KAFKA_CREATE_TOPICS: "produccion:1:1,comercial:1:1,general:1:1"
+      KAFKA_ADVERTISED_HOST_NAME: 172.16.123.1
+      KAFKA_CREATE_TOPICS: "production:1:1,comercial:1:1,createClient:1:1,saga:1:1"
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
