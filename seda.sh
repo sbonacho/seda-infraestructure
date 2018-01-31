@@ -91,24 +91,23 @@ if [ ! -d "$BASEDIR" ]; then
 fi
 
 network
-cd $BASEDIR
 
 case $1 in
-    "clone")
-        cloneRepos
-        ;;
     "install")
+        cd $BASEDIR
         cloneRepos
         installDocker
         ;;
     "start")
-        cloneRepos
-        installDocker
-        docker-compose -f "$ORIG/docker-compose.yml" -d up
+        docker-compose up -d
+        cd $BASEDIR
         start
         ;;
     "stop")
+        cd $BASEDIR
         stop
+        cd $ORIG
+        docker-compose stop
         ;;
     "watch")
         seeLogs
@@ -118,6 +117,6 @@ case $1 in
         ;;
     *)
         echo "use:
-./seda.sh [clone|install|start|stop|watch|stop-watch]"
+./seda.sh [install|start|stop|watch|stop-watch]"
         ;;
 esac
