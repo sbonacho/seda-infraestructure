@@ -91,23 +91,20 @@ if [ ! -d "$BASEDIR" ]; then
 fi
 
 network
+cd $BASEDIR
 
 case $1 in
     "install")
-        cd $BASEDIR
         cloneRepos
         installDocker
         ;;
     "start")
-        docker-compose up -d
-        cd $BASEDIR
+        docker-compose -f "$ORIG/docker-compose.yml" up -d
         start
         ;;
     "stop")
-        cd $BASEDIR
         stop
-        cd $ORIG
-        docker-compose stop
+        docker-compose -f "$ORIG/docker-compose.yml" stop
         ;;
     "watch")
         seeLogs
