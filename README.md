@@ -14,10 +14,10 @@ Maven (3.5 or up)
 
 Lets starts with an example. A simple & complete working example of Soprasteria Event Driven Architecture.
 
-1.- Clone this repository https://innersource.soprasteria.com/digilab-spain/seda/seda-infraestructure.git
+1.- Clone this repository https://innersource.soprasteria.com/seda/seda-infraestructure.git
 
 ```
-➜  pocs git clone https://innersource.soprasteria.com/digilab-spain/seda/seda-infraestructure.git
+➜  pocs git clone https://innersource.soprasteria.com/seda/seda-infraestructure.git
 Cloning into 'seda-infraestructure'...
 Username for 'https://innersource.soprasteria.com': sgbonachorico
 Password for 'https://sgbonachorico@innersource.soprasteria.com':
