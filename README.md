@@ -31,7 +31,7 @@ Checking connectivity... done.
 3.- Install Demo:
 
 ```
-➜  seda-infraestructure git:(master) ./seda.sh install ../
+➜  seda-infraestructure git:(master) ./seda.sh install
 Cloning into 'ch-create-client'...
 remote: Counting objects: 254, done.
 remote: Compressing objects: 100% (122/122), done.
