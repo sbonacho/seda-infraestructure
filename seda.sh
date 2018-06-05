@@ -5,7 +5,7 @@ BASEDIR=$2
 VIRTUALIP="172.16.123.1"
 ORIG=`pwd`
 RUNSCRIPT="run.sh"
-REPOBASE="https://innersource.soprasteria.com/seda"
+REPOBASE="https://github.com/sbonacho"
 PROJECTS="ch-create-client domain-clients domain-portfolios saga-create-client query-clients"
 
 function cloneRepos(){

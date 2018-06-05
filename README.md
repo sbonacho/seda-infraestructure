@@ -1,4 +1,4 @@
-# Soprasteria Event Driven Architecture (SEDA) Infrastructure
+# Sbonacho Event Driven Architecture (SEDA) Infrastructure
 
 It takes less than 5 minutes.
 
@@ -12,15 +12,13 @@ Maven (3.5 or up)
 
 ## Install infrastructure
 
-Lets starts with an example. A simple & complete working example of Soprasteria Event Driven Architecture.
+Lets starts with an example. A simple & complete working example of SBonacho Event Driven Architecture.
 
-1.- Clone this repository https://innersource.soprasteria.com/seda/seda-infraestructure.git
+1.- Clone this repository https://github.com/sbonacho/seda-infraestructure.git
 
 ```
-➜  pocs git clone https://innersource.soprasteria.com/seda/seda-infraestructure.git
+➜  pocs git clone https://github.com/sbonacho/seda-infraestructure.git
 Cloning into 'seda-infraestructure'...
-Username for 'https://innersource.soprasteria.com': sgbonachorico
-Password for 'https://sgbonachorico@innersource.soprasteria.com':
 remote: Counting objects: 27, done.
 remote: Compressing objects: 100% (26/26), done.
 remote: Total 27 (delta 8), reused 0 (delta 0)
@@ -33,7 +31,7 @@ Checking connectivity... done.
 3.- Install Demo:
 
 ```
-➜  seda-infraestructure git:(master) ./seda.sh install
+➜  seda-infraestructure git:(master) ./seda.sh install ../
 Cloning into 'ch-create-client'...
 remote: Counting objects: 254, done.
 remote: Compressing objects: 100% (122/122), done.
@@ -78,11 +76,11 @@ Check if all docker SEDA images are installed on the local docker instance.
 ```
 ➜  seda-infraestructure git:(master) docker images
 REPOSITORY                       TAG                 IMAGE ID            CREATED             SIZE
-soprasteria/query-clients        latest              ea65339f4fe6        22 minutes ago      122MB
-soprasteria/domain-portfolios    latest              8b2ec7b1312a        24 minutes ago      115MB
-soprasteria/domain-clients       latest              46f84871fead        25 minutes ago      115MB
-soprasteria/ch-create-client     latest              e57f404f2af3        26 minutes ago      121MB
-soprasteria/saga-create-client   latest              de1d22513b4b        29 minutes ago      115MB
+sbonacho/query-clients        latest              ea65339f4fe6        22 minutes ago      122MB
+sbonacho/domain-portfolios    latest              8b2ec7b1312a        24 minutes ago      115MB
+sbonacho/domain-clients       latest              46f84871fead        25 minutes ago      115MB
+sbonacho/ch-create-client     latest              e57f404f2af3        26 minutes ago      121MB
+sbonacho/saga-create-client   latest              de1d22513b4b        29 minutes ago      115MB
 ```
 
 Install kafka docker images just running docker-compose up -d
@@ -125,11 +123,11 @@ Check if everything is running:
 ```
 ➜  seda-infraestructure git:(master) docker ps -a
 CONTAINER ID        IMAGE                            COMMAND                  CREATED              STATUS              PORTS                                                NAMES
-5dbd8810628f        soprasteria/query-clients        "/bin/sh -c 'exec ja…"   About a minute ago   Up About a minute   0.0.0.0:8082->8082/tcp                               query-clients
-1b204259f4f9        soprasteria/saga-create-client   "/bin/sh -c 'exec ja…"   About a minute ago   Up About a minute                                                        saga-create-client
-0036b85ee4c8        soprasteria/domain-portfolios    "/bin/sh -c 'exec ja…"   About a minute ago   Up About a minute                                                        domain-portfolios
-b78fea04cf75        soprasteria/domain-clients       "/bin/sh -c 'exec ja…"   About a minute ago   Up About a minute                                                        domain-clients
-5fa918e47eb7        soprasteria/ch-create-client     "/bin/sh -c 'exec ja…"   About a minute ago   Up About a minute   0.0.0.0:8080->8080/tcp                               ch-create-client
+5dbd8810628f        sbonacho/query-clients        "/bin/sh -c 'exec ja…"   About a minute ago   Up About a minute   0.0.0.0:8082->8082/tcp                               query-clients
+1b204259f4f9        sbonacho/saga-create-client   "/bin/sh -c 'exec ja…"   About a minute ago   Up About a minute                                                        saga-create-client
+0036b85ee4c8        sbonacho/domain-portfolios    "/bin/sh -c 'exec ja…"   About a minute ago   Up About a minute                                                        domain-portfolios
+b78fea04cf75        sbonacho/domain-clients       "/bin/sh -c 'exec ja…"   About a minute ago   Up About a minute                                                        domain-clients
+5fa918e47eb7        sbonacho/ch-create-client     "/bin/sh -c 'exec ja…"   About a minute ago   Up About a minute   0.0.0.0:8080->8080/tcp                               ch-create-client
 78afec73cce9        sedainfraestructure_kafka        "start-kafka.sh"         About a minute ago   Up About a minute   0.0.0.0:9092->9092/tcp                               sedainfraestructure_kafka_1
 4d6e10ec429f        wurstmeister/zookeeper           "/bin/sh -c '/usr/sb…"   About a minute ago   Up About a minute   22/tcp, 2888/tcp, 3888/tcp, 0.0.0.0:2181->2181/tcp   sedainfraestructure_zookeeper_1
 ```
